@@ -13,18 +13,18 @@ Live: https://sidebrary.ntedvs.com/
 
 ## Scripts
 
-- `bun run dev` — Vite dev server
-- `bun run worker` — `wrangler dev`
-- `bun run build` — typecheck + build
-- `bun run deploy` — build and deploy the Worker
-- `bun run types` — regenerate `worker-configuration.d.ts`
-- `bun run format` — oxfmt
+- `bun run dev` - Vite dev server
+- `bun run worker` - `wrangler dev`
+- `bun run build` - typecheck + build
+- `bun run deploy` - build and deploy the Worker
+- `bun run types` - regenerate `worker-configuration.d.ts`
+- `bun run format` - oxfmt
 
 ## Layout
 
-- `src/` — React app (intake flow in `app.tsx`, questions in `questions.ts`, inputs in `fields.tsx`)
-- `worker/` — Worker entry (`index.ts`), site generation (`generate.ts`), and Workflow (`workflow.ts`)
-- `wrangler.toml` — bindings: `INTAKE_KV`, `UPLOADS` (R2), rate limiters, `SITE_WORKFLOW`, `AI`
+- `src/` - React app (intake flow in `app.tsx`, questions in `questions.ts`, inputs in `fields.tsx`)
+- `worker/` - Worker entry (`index.ts`), site generation (`generate.ts`), and Workflow (`workflow.ts`)
+- `wrangler.toml` - bindings: `INTAKE_KV`, `UPLOADS` (R2), rate limiters, `SITE_WORKFLOW`, `AI`
 
 ## Secrets
 
