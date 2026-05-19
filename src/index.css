@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #000000;
+  --color-fg: #ffffff;
+  --color-muted: #6b6b6b;
+  --color-rule: #1f1f1f;
+  --font-sans: "Geist Variable", system-ui, sans-serif;
+  --font-mono: "Geist Mono Variable", ui-monospace, monospace;
+  --default-font-family: var(--font-sans);
+}
+
+@layer components {
+  .react-colorful {
+    width: 200px;
+    height: 200px;
+  }
+  .react-colorful__saturation,
+  .react-colorful__hue {
+    border-radius: 0;
+  }
+  .react-colorful__saturation {
+    border-bottom: 8px solid transparent;
+  }
+  .react-colorful__hue {
+    height: 16px;
+  }
+  .react-colorful__pointer {
+    width: 14px;
+    height: 14px;
+    border-width: 2px;
+  }
+}
+
+@layer base {
+  button {
+    @apply cursor-pointer disabled:cursor-default;
+  }
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-fg);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: var(--color-fg);
+    color: var(--color-bg);
+  }
+}

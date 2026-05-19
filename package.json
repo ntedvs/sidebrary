@@ -1,0 +1,39 @@
+{
+  "name": "sidebrary",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "worker": "wrangler dev",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "deploy": "bun run build && wrangler deploy",
+    "types": "wrangler types",
+    "format": "oxfmt"
+  },
+  "dependencies": {
+    "@fontsource-variable/geist": "5.2.9",
+    "@fontsource-variable/geist-mono": "5.2.8",
+    "@phosphor-icons/react": "2.1.10",
+    "motion": "12.39.0",
+    "react": "19.2.6",
+    "react-colorful": "5.7.0",
+    "react-dom": "19.2.6"
+  },
+  "devDependencies": {
+    "@babel/core": "7.29.0",
+    "@rolldown/plugin-babel": "0.2.3",
+    "@tailwindcss/vite": "4.3.0",
+    "@types/babel__core": "7.20.5",
+    "@types/node": "25.9.0",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.2",
+    "babel-plugin-react-compiler": "1.0.0",
+    "oxfmt": "0.50.0",
+    "tailwindcss": "4.3.0",
+    "typescript": "6.0.3",
+    "vite": "8.0.13",
+    "wrangler": "4.92.0"
+  }
+}

@@ -1,0 +1,51 @@
+name = "sidebrary-intake"
+main = "worker/index.ts"
+compatibility_date = "2025-05-01"
+compatibility_flags = ["nodejs_compat"]
+
+[observability.logs]
+enabled = true
+invocation_logs = true
+
+[assets]
+directory = "./dist"
+not_found_handling = "single-page-application"
+run_worker_first = ["/api/*", "/sites/*"]
+
+# Local dev: `bunx wrangler dev --port 8787`
+[[kv_namespaces]]
+binding = "INTAKE_KV"
+id = "535b73dbe6d241b291b434253db0d84a"
+
+[[r2_buckets]]
+binding = "UPLOADS"
+bucket_name = "sidebrary-uploads"
+
+[[unsafe.bindings]]
+name = "INTAKE_LIMITER"
+type = "ratelimit"
+namespace_id = "1001"
+simple = { limit = 5, period = 60 }
+
+[[unsafe.bindings]]
+name = "UPLOAD_LIMITER"
+type = "ratelimit"
+namespace_id = "1002"
+simple = { limit = 30, period = 60 }
+
+[[workflows]]
+name = "site-generation"
+binding = "SITE_WORKFLOW"
+class_name = "SiteGenerationWorkflow"
+
+[ai]
+binding = "AI"
+
+# The public origin Browser Rendering should hit for screenshots.
+[vars]
+PUBLIC_ORIGIN = "https://sidebrary-intake.ream-33b.workers.dev"
+
+# Set via `wrangler secret put <NAME>`. Declared here so `wrangler types`
+# includes them in Env and `wrangler deploy` fails fast if any are missing.
+[secrets]
+required = ["CLOUDFLARE_ACCOUNT_ID", "BROWSER_RENDERING_TOKEN"]
