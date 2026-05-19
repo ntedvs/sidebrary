@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /sites/
+
+Sitemap: https://sidebrary.ntedvs.com/sitemap.xml

@@ -1,0 +1,10 @@
+{
+  "name": "Sidebrary",
+  "short_name": "Sidebrary",
+  "description": "Generate your personal site from a guided intake.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "icons": [{ "src": "/logo.webp", "sizes": "any", "type": "image/webp" }]
+}

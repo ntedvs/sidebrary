@@ -170,6 +170,7 @@ export default {
         headers: {
           "content-type": "text/html; charset=utf-8",
           "cache-control": "public, max-age=60",
+          "x-robots-tag": "noindex, nofollow",
         },
       })
     }
