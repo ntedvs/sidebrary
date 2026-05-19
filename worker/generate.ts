@@ -69,11 +69,7 @@ export async function generateSite(
     response?: string
     choices?: { message?: { content?: string }; text?: string }[]
   }
-  const text =
-    r.response ??
-    r.choices?.[0]?.message?.content ??
-    r.choices?.[0]?.text ??
-    ""
+  const text = r.response ?? r.choices?.[0]?.message?.content ?? r.choices?.[0]?.text ?? ""
 
   if (!text) {
     console.error("[generate] empty text. keys=%s", Object.keys(response ?? {}).join(","))
